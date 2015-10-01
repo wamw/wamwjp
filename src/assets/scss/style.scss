@@ -3,44 +3,25 @@
 @import 'normalize';
 @import 'font';
 
-// example style
 body {
-	background: #f2f2f2;
-	color: #282828;
-	font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+	font-family: 'stellar';
 	font-size: 14px;
-	line-height: 1.6;
 }
-body > section {
-	width: 800px;
-	margin: auto;
-}
-body > section > section {
-	margin-bottom: 40px;
-	padding: 25px;
-	background: #fff;
-	border: 1px solid #e2e2e2;
 
-	> h1 {
-		margin: 0 0 1.5em 0;
-		padding: 0;
-		font-size: 1.6em;
-	}
-
-	ul, li {
-		list-style-position: inside;
-		margin: 0;
-		padding: 0;
-		font-size: 1em;
-		line-height: 2;
-	}
+p {
+	font-size: 40px;
+	margin: 0;
+	padding: 0;
 }
-.directory-structure code {
-	font-size: 14px;
-	font-weight: bold;
-	font-family: "Lucida Console", Monaco, monospace;
+.p1 {
+	font-weight: 200;
 }
-.directory-structure code .comment {
-	font-size: 12px;
-	color: #999;
+.p2 {
+	font-weight: 400;
+}
+.p3 {
+	font-weight: 500;
+}
+.p4 {
+	font-weight: 700;
 }
