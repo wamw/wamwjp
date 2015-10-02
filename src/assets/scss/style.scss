@@ -2,26 +2,18 @@
 
 @import 'normalize';
 @import 'font';
+@import 'variables';
+// @import 'theme-white';
+@import 'theme-black';
+@import 'contents';
+@import 'contents-mission';
 
+html {
+
+}
 body {
-	font-family: 'stellar';
-	font-size: 14px;
-}
-
-p {
-	font-size: 40px;
-	margin: 0;
-	padding: 0;
-}
-.p1 {
-	font-weight: 200;
-}
-.p2 {
-	font-weight: 400;
-}
-.p3 {
-	font-weight: 500;
-}
-.p4 {
-	font-weight: 700;
+	background-color: $background-color;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	color: $text-color;
 }
