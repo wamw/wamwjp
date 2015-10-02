@@ -14,7 +14,9 @@ $text-color: $black !default;
 $text-light-color: $gray !default;
 
 
-// base-font-size
-// $base-font-size: 62.5% !default;
-$base-font-size: 125% !default;
+// font-size
+$base-font-size: 62.5% !default;
+// $base-font-size: 125% !default;
 $base-font-family: stellar, Helvetica, Arial, sans-serif !default;
+$read-font-size: 1.8rem;
+$read-font-size-ja: 1.2rem;

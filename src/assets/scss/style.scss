@@ -4,16 +4,17 @@
 @import 'font';
 @import 'variables';
 // @import 'theme-white';
-@import 'theme-black';
+// @import 'theme-black';
 @import 'contents';
+@import 'contents-wamw';
 @import 'contents-mission';
+@import 'contents-works';
 
 html {
-
-}
-body {
-	background-color: $background-color;
 	font-family: $base-font-family;
 	font-size: $base-font-size;
 	color: $text-color;
+}
+body {
+	background-color: $background-color;
 }
