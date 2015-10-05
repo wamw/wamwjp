@@ -52,6 +52,9 @@
 						<line class="fill-line" stroke-miterlimit="10" x1="197.3" y1="-5" x2="134.2" y2="104.5"/>
 						<line class="fill-line" stroke-miterlimit="10" x1="168.3" y1="-5" x2="231.4" y2="104.5"/>
 						<line class="fill-line" stroke-miterlimit="10" x1="179.7" y1="104.5" x2="214.3" y2="44.4"/>
+						<path class="line line1" fill="none" d="M126,99 182.8,0.6 239.6,99"/>
+						<path class="line line1" fill="none" d="M126,99 148.7,99 182.8,40.2 216.9,99 239.6,99"/>
+						<path class="line line1" fill="none" d="M194.2,59.7 171.5,99 194.2,99 205.5,79.3"/>
 					</g>
 					<g class="letter letter-m" clip-path="url(#logo-clip)">
 						<line class="fill-line" stroke-miterlimit="10" x1="213.5" y1="-5" x2="260.2" y2="76"/>
@@ -59,15 +62,25 @@
 						<line class="fill-line" stroke-miterlimit="10" x1="259.1" y1="-5" x2="322.3" y2="104.5"/>
 						<line class="fill-line" stroke-miterlimit="10" x1="333.8" y1="-5" x2="270.7" y2="104.5"/>
 						<line class="fill-line" stroke-miterlimit="10" x1="304.7" y1="-5" x2="367.8" y2="104.5"/>
+						<path class="line line1" fill="none" d="M216.9,20.7 251,79.7 273.7,40.4 307.8,99 330.5,99"/>
+						<path class="line line1" fill="none" d="M216.9,20.7 228.3,1 251,40.4 273.7,1 330.5,99"/>
+						<path class="line line1" fill="none" d="M262.4,99 319.2,0.8 376,99"/>
+						<path class="line line1" fill="none" d="M262.4,99 285.1,99 319.2,40.1 353.3,99 376,99"/>
 					</g>
 					<g class="letter letter-w2" clip-path="url(#logo-clip)">
 						<line class="fill-line" stroke-miterlimit="10" x1="349.3" y1="-6" x2="412.7" y2="103.5"/>
 						<line class="fill-line" stroke-miterlimit="10" x1="448.4" y1="-6.1" x2="385.2" y2="103.4"/>
 						<line class="fill-line" stroke-miterlimit="10" x1="394.8" y1="-6.1" x2="457.9" y2="103.4"/>
 						<line class="fill-line" stroke-miterlimit="10" x1="493.8" y1="-6.1" x2="430.6" y2="103.4"/>
+						<path class="line line1" fill="none" d="M341.9,1 398.7,99.4 455.5,1"/>
+						<path class="line line1" fill="none" d="M341.9,1 364.6,1 398.7,60 432.8,1 455.5,1"/>
+						<path class="line line1" fill="none" d="M387.4,1 444.2,99.4 501,1"/>
+						<path class="line line1" fill="none" d="M387.4,1 410.1,1 444.2,60 478.3,1 501,1"/>
 					</g>
 					<g class="letter letter-post" clip-path="url(#logo-clip)">
 						<line class="fill-line" stroke-miterlimit="10" x1="509.5" y1="45" x2="475.2" y2="104.3"/>
+						<path class="line line1" fill="none" d="M466.9,99 501,40 501,79.7"/>
+						<path class="line line1" fill="none" d="M466.9,99 489.6,99 501,79.7"/>
 					</g>
 				</svg>
 			</div>
@@ -182,8 +195,8 @@
 				}
 				var distance = line.distance()
 				$(item).css({
-					// 'strokeDasharray': distance,
-					// 'strokeDashoffset': distance
+					'strokeDasharray': distance,
+					'strokeDashoffset': distance
 				});
 			})
 		})
