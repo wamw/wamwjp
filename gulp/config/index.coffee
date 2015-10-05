@@ -22,7 +22,7 @@ CONF = {
     html: 'src/**/*.html'
     ejs: 'src/**/*.ejs'
     style: 'src/assets/scss/**/*.{sass,scss}'
-    script: 'src/assets/coffee/**/*.coffee'
+    script: 'src/assets/coffee/**/*.js'
     static: 'src/assets/static/**/*'
   }
   dest: {
@@ -34,7 +34,7 @@ CONF = {
 }
 
 WEBPACK_CONF = {
-  entry: './src/assets/coffee/index.coffee'
+  entry: './src/assets/coffee/index.js'
   output: {
     path: CONF.dest.script
     publicPath: './'
@@ -63,7 +63,7 @@ WEBPACK_CONF = {
     new webpack.optimize.AggressiveMergingPlugin()
   ])
   resolve: {
-    extensions: ['', '.js', '.coffee']
+    extensions: ['', '.js']
   },
   module: {
     preLoaders: [
@@ -75,8 +75,9 @@ WEBPACK_CONF = {
     ]
     loaders: [
       {
-        test: /\.coffee?$/
-        loader: 'coffee-loader'
+        test: /\.js?$/
+        exclude: /node_modules/
+        loader: 'babel'
       }
     ]
   }
