@@ -1,12 +1,12 @@
 {
     "plugins": [],
 
-    "attr-name-style": "dash",
+    "attr-name-style": false,
     "attr-no-dup": true,
     "attr-quote-style": "double",
     "doctype-first": true,
     "doctype-html5": true,
-    "id-class-style": "dash",
+    "id-class-style": false,
     "id-no-dup": true,
     "img-req-alt": true,
     "indent-style": "tabs",

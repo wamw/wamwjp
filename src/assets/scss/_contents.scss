@@ -16,7 +16,7 @@
 			padding: 0;
 			text-align: right;
 			text-transform: uppercase;
-			font-size: 1.8rem;
+			font-size: $heading1-font-size;
 			font-weight: normal;
 			line-height: 1.2;
 		}
@@ -24,15 +24,23 @@
 		> h2, p {
 			width: 580px;
 			float: right;
+			margin: 0;
+			padding: 0;
 		}
 
 		> h2 {
-			margin: 0;
-			padding: 0;
 			font-size: 3.2rem;
 			font-weight: normal;
 			text-transform:  uppercase;
 			line-height: 1;
+			margin-bottom: .30rem;
+
+			&[lang="ja"] {
+				text-indent: .10rem;
+				font-size: $heading1-font-size-ja;
+				letter-spacing: .35rem;
+				opacity: .90;
+			}
 		}
 	}
 }
