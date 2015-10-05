@@ -4,13 +4,15 @@
 @import 'font';
 @import 'variables';
 // @import 'theme-white';
-// @import 'theme-black';
+@import 'theme-black';
 @import 'contents';
 @import 'contents-wamw';
 @import 'contents-mission';
 @import 'contents-works';
 @import 'contents-company';
 @import 'contents-contact';
+@import 'animation';
+
 
 html {
 	font-family: $base-font-family;

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+html.init {
+	body {
+		background: #000;
+		svg {
+			stroke: #fff;
+			fill: transparent;
+		}
+	}
+}
+
+g.letter {
+	.line {
+		stroke-width: 5px;
+		stroke: #f00;
+	}
+}
+
+g.letter-pre {
+	.fill-line {
+		stroke-width: 1px;
+		stroke: #f00;
+		opacity: .50;
+
+		animation: path-l1 1s 1 linear;
+		animation-fill-mode: forwards;
+	}
+	.line1,
+	.line2 {
+		animation: line-appear 1s 1 linear;
+		animation-fill-mode: forwards;
+	}
+}
+
+@keyframes line-appear {
+	to {
+		storke-dashoffset: 0 !important;
+	}
+}
+
+@keyframes path-l1 {
+	to {
+		stroke-width: 19.7px;
+		// stroke-dashoffset: 400;
+	}
+}
+@keyframes line-pre-1 {
+	to {
+		stroke-dashoffset: 750;
+	}
+}
