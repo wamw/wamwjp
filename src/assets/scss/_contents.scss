@@ -1,6 +1,5 @@
 @charset 'UTF-8';
 
-
 #contents {
 	width: 800px;
 	margin: 0 auto;
@@ -18,28 +17,31 @@
 			text-transform: uppercase;
 			font-size: $heading1-font-size;
 			font-weight: normal;
-			line-height: 1.2;
+			line-height: 1.3;
 		}
 
-		> h2, p {
-			width: 580px;
-			float: right;
-			margin: 0;
-			padding: 0;
-		}
+		> div.contents {
+			width: 360px;
+			float: left;
+			margin-left: 40px;
 
-		> h2 {
-			font-size: 3.2rem;
-			font-weight: normal;
-			text-transform:  uppercase;
-			line-height: 1;
-			margin-bottom: .30rem;
+			> h2, p {
+				margin: 0;
+				padding: 0;
+			}
 
-			&[lang="ja"] {
-				text-indent: .10rem;
-				font-size: $heading1-font-size-ja;
-				letter-spacing: .35rem;
-				opacity: .90;
+			> h2 {
+				margin-bottom: .30rem;
+				font-size: $heading2-font-size;
+				font-weight: normal;
+				text-transform: uppercase;
+				line-height: 1;
+
+				&[lang="ja"] {
+					text-indent: .10rem;
+					font-size: $heading2-font-size-ja;
+					letter-spacing: .35rem;
+				}
 			}
 		}
 	}

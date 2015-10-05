@@ -9,12 +9,16 @@
 @import 'contents-wamw';
 @import 'contents-mission';
 @import 'contents-works';
+@import 'contents-company';
 @import 'contents-contact';
 
 html {
 	font-family: $base-font-family;
 	font-size: $base-font-size;
 	color: $text-color;
+}
+*[lang="ja"] {
+	font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 body {
 	background-color: $background-color;
