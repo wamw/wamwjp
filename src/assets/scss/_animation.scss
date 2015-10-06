@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+// x1="([^"]+)" y1="([^"]+)" x2="([^"]+)" y2="([^"]+)"
+// x1="$3" y1="$4" x2="$1" y2="$2"
+
 @mixin stroke-letter($dashValue, $duration, $delay) {
 	stroke-dasharray: $dashValue;
 	stroke-dashoffset: $dashValue;
@@ -8,14 +11,10 @@
 }
 
 @mixin fill-letter($dashValue, $duration, $delay) {
-	stroke-width: 19.7px;
-	opacity: .95;
+	stroke-width: 20px;
 	stroke-dasharray: $dashValue;
 	stroke-dashoffset: $dashValue;
-	animation: show-fill-stroke 0.3s 2s $easeInQuad;
-	animation: show-fill-stroke ($duration / 5) (1.5s - ($delay / 3)) linear;
-	animation: show-fill-stroke ($duration / 1.2) ($delay + 0.5s) linear;
-	animation: show-fill-stroke ($duration * 3) ($delay + 1.3s) $easeInCubic;
+	animation: show-fill-stroke ($duration / 2) 2.2s $easeInOutCubic;
 	animation-fill-mode: forwards;
 	stroke-linecap: 'round';
 }
@@ -205,8 +204,8 @@ html.anim {
 @keyframes show-fill-stroke {
 	to {
 		stroke-dashoffset: 0;
-		stroke-width: 20px;
-		opacity: 1;
+		// stroke-width: 20px;
+		// opacity: 1;
 	}
 }
 @keyframes show-center-stroke {
