@@ -1,5 +1,11 @@
 'use strict'
 
+import {Screen} from './modules/screen';
+
+$(() => {
+  Screen.init();
+});
+
 class Point {
   constructor(xyString) {
     [this.x, this.y] = xyString.split(',');
@@ -32,10 +38,6 @@ class Line {
     return distance;
   }
 }
-
-$(() => {
-  $('html').addClass('anim').removeClass('init');
-})
 
 $(() => {
     $('.letter path').each((index, item) => {
@@ -81,7 +83,7 @@ $(() => {
 
       // element
       $(item).attr('class', `fill-line fill-line${index}`);
-      console.log(`.fill-line${index} { @include fill-letter(${distance}, ${duration}s, ${delay}s); }`);
+      // console.log(`.fill-line${index} { @include fill-letter(${distance}, ${duration}s, ${delay}s); }`);
     });
 
     $('.letter .center-line').each((index, item) => {
@@ -100,7 +102,7 @@ $(() => {
 
       // element
       $(item).attr('class', `center-line center-line${index}`);
-      console.log(`.center-line${index} { @include center-letter(${distance}, ${duration}s, ${delay}s); }`);
+      // console.log(`.center-line${index} { @include center-letter(${distance}, ${duration}s, ${delay}s); }`);
     });
   }
 );

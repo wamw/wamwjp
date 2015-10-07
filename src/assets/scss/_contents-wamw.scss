@@ -1,8 +1,9 @@
 @charset 'UTF-8';
 
 section.wamw {
-	margin-top: 350px;
-	margin-bottom: 350px;
+	display: table-cell !important;
+	width: 800px;
+	vertical-align: middle;
 	text-align: center;
 	svg {
 		width: 361px;

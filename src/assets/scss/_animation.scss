@@ -16,7 +16,6 @@
 	stroke-dashoffset: $dashValue;
 	animation: show-fill-stroke ($duration / 2) 2.2s $easeInOutCubic;
 	animation-fill-mode: forwards;
-	stroke-linecap: 'round';
 }
 
 @mixin center-letter($dashValue, $duration, $delay) {
@@ -29,40 +28,56 @@
 
 
 
-
+html {
+	g.letter {
+		.line {
+			transition: stroke $screen-trans-duration $easeInOutCubic;
+			stroke-width: 1.5px;
+		}
+		.fill-line {
+			transition: stroke $screen-trans-duration $easeInOutCubic;
+			stroke-width: 20px;
+		}
+		.center-line {
+			transition: stroke $screen-trans-duration $easeInOutCubic;
+			stroke-width: 2px;
+		}
+	}
+}
 
 html.init {
-	body {
-		background: #000;
-	}
-	svg {
-		stroke: #fff;
-		fill: transparent;
-		g.letter {
-			.line,
-			.fill-line {
-				// stroke-width: 10px;
-				// stroke: #fff;
-			}
+	g.letter {
+		.line {
+			stroke: $white;
+			fill: transparent;
+		}
+		.fill-line {
+			stroke: $white;
+			fill: transparent;
+		}
+		.center-line {
+			stroke: $white;
+			fill: transparent;
 		}
 	}
 }
 
 html.anim {
-	svg {
-		stroke: #fff;
-		fill: transparent;
-		g.letter {
-			.line {
-				stroke-width: 1.5px;
-			}
-			.fill-line {
-				stroke: #fff;
-			}
-			.center-line {
-				stroke-width: 2px;
-			}
+	g.letter {
+		.line {
+			stroke: $white;
+			fill: transparent;
 		}
+		.fill-line {
+			stroke: $white;
+			fill: transparent;
+		}
+		.center-line {
+			stroke: $white;
+			fill: transparent;
+		}
+	}
+	svg {
 		.line0 { @include stroke-letter(84.72086010556512, 0.36944172021113025s, 0.09196126991882922s); }
 		.line1 { @include stroke-letter(68.14550608807598, 0.336291012176152s, 0.03890359124168753s); }
 		.line2 { @include stroke-letter(227.23380030268385, 0.6544676006053677s, 0.11546840471215547s); }
@@ -140,6 +155,23 @@ html.anim {
 		.center-line15 { @include center-letter(126.37982433917209, 0.5425321622611472s, 1.4751164140179752s); }
 		.center-line16 { @include center-letter(126.42978288362279, 0.4428652192241519s, 1.433052106127143s); }
 		.center-line17 { @include center-letter(68.50532825992443, 0.45670218839949617s, 1.5588817350007595s); }
+	}
+}
+
+html.show {
+	g.letter {
+		.line {
+			stroke: $black;
+			fill: transparent;
+		}
+		.fill-line {
+			stroke: $black;
+			fill: transparent;
+		}
+		.center-line {
+			stroke: $black;
+			fill: transparent;
+		}
 	}
 }
 

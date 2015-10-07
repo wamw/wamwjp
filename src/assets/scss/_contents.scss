@@ -1,5 +1,41 @@
 @charset 'UTF-8';
 
+html {
+	body {
+		transition: all $screen-trans-duration $easeInOutCubic;
+		color: $white;
+	}
+}
+
+html.init,
+html.anim {
+	body {
+		background-color: $background-color;
+		color: $white;
+	}
+	#contents {
+		// section {
+		// 	display: none;
+		// }
+		// section.wamw {
+		// 	display: block;
+		// }
+	}
+}
+html.show {
+	body {
+		background-color: $white;
+		color: $black;
+	}
+	#contents {
+		// section {
+		// 	display: block;
+		// }
+	}
+}
+
+
+
 #contents {
 	width: 800px;
 	margin: 0 auto;

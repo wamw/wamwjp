@@ -25,3 +25,24 @@ html {
 body {
 	background-color: $background-color;
 }
+
+
+
+#cover {
+	transition: all ($screen-trans-duration + 0.2s) $easeInOutCubic;
+	width: 100%;
+	height: 100%;
+	background: $black;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	border-radius: 10000px;
+	// filter: blur(100px);
+	opacity: .5;
+	zoom: 3;
+}
+html.show {
+	#cover {
+		background: $white;
+	}
+}
