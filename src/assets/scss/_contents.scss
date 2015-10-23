@@ -5,12 +5,19 @@ html {
 		transition: all $screen-trans-duration $easeInOutCubic;
 		color: $white;
 	}
+	a {
+		transition: all $screen-trans-duration $easeInOutCubic;
+		color: $white;
+	}
 }
 
 html.init,
 html.anim {
 	body {
 		background-color: $background-color;
+		color: $white;
+	}
+	a {
 		color: $white;
 	}
 	#contents {
@@ -25,6 +32,9 @@ html.anim {
 html.show {
 	body {
 		background-color: $white;
+		color: $black;
+	}
+	a {
 		color: $black;
 	}
 	#contents {
@@ -61,13 +71,9 @@ html.show {
 			float: left;
 			margin-left: 40px;
 
-			> h2, p {
-				margin: 0;
+			h2 {
+				margin: 0 0 0.3rem 0;
 				padding: 0;
-			}
-
-			> h2 {
-				margin-bottom: .30rem;
 				font-size: $heading2-font-size;
 				font-weight: normal;
 				text-transform: uppercase;
@@ -81,5 +87,17 @@ html.show {
 			}
 		}
 	}
+}
+
+a.button {
+	text-decoration: none;
+	font-weight: bold;
+	letter-spacing: 0.08rem;
+}
+.button {
+	display: inline-block;
+	padding: 2rem 6rem;
+	background: $black;
+	color: $white;
 }
 

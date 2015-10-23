@@ -1,18 +1,21 @@
 @charset "UTF-8";
 
-#contents section.company .contents {
-	> h2[lang="ja"] {
-		margin-bottom: 5rem;
-	}
-	p.address {
-		// font-size: $read-font-size;
-		font-size: 2.7rem;
-		line-height: 1;
-		margin-bottom: .30rem;
-		text-align: justify;
+#contents section.company {
+	.contents {
+		> h2 {
+			&[lang="ja"] {
+			margin: 0;
+			margin-bottom: 8rem;
+			font-size: $read-font-size-ja;
+			}
+		}
+		p.address {
+			font-size: $read-font-size;
+			margin-bottom: 1rem;
 
-		&[lang="ja"] {
-			font-size: $heading2-font-size-ja;
+			&[lang="ja"] {
+				font-size: $read-font-size-ja;
+			}
 		}
 	}
 }
