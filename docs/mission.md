@@ -16,7 +16,7 @@ World Wide Webの便利さに疑う余地はありませんが、しかし一方
 
 ### en
 
-TODO
+(TODO)
 
 
 ## Works - prvvv
@@ -27,7 +27,7 @@ Web制作におけるコーディング・確認・連絡・修正の業務フ�
 
 ### en
 
-TODO
+(TODO)
 
 
 ## Works - log visualize
@@ -38,7 +38,7 @@ TODO
 
 ### en
 
-TODO
+(TODO)
 
 
 ## Works - web business consulting
@@ -49,18 +49,18 @@ TODO
 
 ### en
 
-TODO
+(TODO)
 
 
 ## Works - web system development
 
 ### ja
 
-ご要望を追うか対し、要件の洗い出しを行ったうえで、安定性・メンテナンス性の高いシステムの構築を行います。
+ご要望をお伺いし、要件の洗い出しを行ったうえで、安定性・メンテナンス性の高いシステムの構築を行います。
 
 ### en
 
-TODO
+(TODO)
 
 
 

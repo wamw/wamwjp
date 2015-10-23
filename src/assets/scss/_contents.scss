@@ -5,12 +5,19 @@ html {
 		transition: all $screen-trans-duration $easeInOutCubic;
 		color: $white;
 	}
+	a {
+		transition: all $screen-trans-duration $easeInOutCubic;
+		color: $white;
+	}
 }
 
 html.init,
 html.anim {
 	body {
 		background-color: $background-color;
+		color: $white;
+	}
+	a {
 		color: $white;
 	}
 	#contents {
@@ -25,6 +32,9 @@ html.anim {
 html.show {
 	body {
 		background-color: $white;
+		color: $black;
+	}
+	a {
 		color: $black;
 	}
 	#contents {
