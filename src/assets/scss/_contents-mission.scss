@@ -11,6 +11,16 @@ section.mission {
 		text-align: center;
 		line-height: 1;
 	}
+	div[lang="en"] {
+		margin-bottom: 2rem;
+		line-height: 1.4;
+	}
+	div[lang="ja"] {
+		line-height: 1.6;
+		p {
+			font-size: 1.5rem;
+		}
+	}
 	p {
 		width: 360px;
 		margin: auto;
@@ -18,9 +28,5 @@ section.mission {
 		text-align: justify;
 		text-justify: inter-ideograph;
 		font-size: $read-font-size;
-	}
-	p[lang="ja"] {
-		color: $text-light-color;
-		font-size: $read-font-size-ja;
 	}
 }

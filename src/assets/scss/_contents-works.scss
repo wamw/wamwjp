@@ -1,4 +1,38 @@
 @charset 'utf-8'
 
-section.works {
+#contents section.works {
+	.contents {
+		> section {
+			margin-bottom: 8rem;
+
+			p {
+				margin: 0 0 1rem 0;
+				padding: 0;
+			}
+
+			> h2 {
+				margin-bottom: 1rem;
+				white-space: nowrap;
+			}
+
+			> [lang] {
+				p {
+					text-align: justify;
+					-webkit-hyphens: auto;
+					-moz-hyphens: auto;
+					hyphens: auto;
+					-ms-text-align-last: left;
+					-moz-text-align-last: left;
+					-webkit-text-align-last: left;
+					text-align-last: left;
+				}
+			}
+			> [lang="en"] {
+				font-size: $read-font-size;
+			}
+			> [lang="ja"] {
+				font-size: $read-font-size-ja;
+			}
+		}
+	}
 }
