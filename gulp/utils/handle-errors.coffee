@@ -1,7 +1,6 @@
 'use strict'
 
 notify = require('gulp-notify')
-notifier = require('node-notifier')
 
 module.exports = ->
   args = Array.prototype.slice.call(arguments)
