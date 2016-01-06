@@ -183,7 +183,7 @@
 			bottom: 0px;
 		}
 		#contents {
-			display: none;
+			/*display: none;*/
 		}
 	</style>
 	<script src="js/jquery-2.1.4.min.js"></script>
@@ -215,13 +215,21 @@
 		var scrolling = false;
 		$(window).on('scroll', function(event) {
 			scrolling = true;
-			var d = 200;
-			var scrollValue = (previousScrollOffset - $(window).scrollTop()) / d;
+			var scrollValue = (previousScrollOffset - $(window).scrollTop());
+			scrollValue /= 500;
+			previousScrollOffset = $(window).scrollTop();
+
+			if (scrollValue > 0) {
+				vector.y += scrollValue;
+			} else {
+				vector.y += scrollValue;
+			}
+
 
 			// vector *= 1 + scrollValue;
-			// if (vector.length > 100) {
-			// 	vector.length = 100;
-			// }
+			if (vector.length > 100) {
+				vector.length = 100;
+			}
 
 		});
 
@@ -244,14 +252,14 @@
 			}
 
 			if (dx > 0) {
-				vector.x += dx / 200;
+				vector.x -= dx / 600;
 			} else {
-				vector.x += dx / 200;
+				vector.x -= dx / 600;
 			}
 			if (dy > 0) {
-				vector.y += dy / 200;
+				vector.y -= dy / 600;
 			} else {
-				vector.y += dy / 200;
+				vector.y -= dy / 600;
 			}
 			if (vector.length > 100) {
 				vector.length = 100;
@@ -318,18 +326,6 @@
 						star.fillColor = '#fff';
 					}
 				}
-				// star.position += new Point(
-				// 	Math.random() * 10 - 5,
-				// 	Math.random() * 10 - 5
-				// );
-
-				// for (var ii = 0, ll = numberOfStars; ii < ll; ii++) {
-				// 	if (star.position.getDistance(stars[ii].position) < 50) {
-				// 		// var line = new Path.Line(star.position, stars[ii].position);
-				// 		// line.strokeColor = 'white';
-				// 		// lines.push(line);
-				// 	}
-				// }
 
 			}
 
@@ -354,7 +350,7 @@
 			// 	}
 			// }
 
-			if (vector.length > 0.05) {
+			if (vector.length > 0.08) {
 				vector *= 0.95;
 			}
 			// console.log(vector);
