@@ -169,8 +169,204 @@
 			</div>
 		</section>
 	</div>
+	<canvas id="paper-canvas" resize></canvas>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		#paper-canvas {
+			width: 100%;
+			height: 600px;
+			position: fixed;
+			top: 0px;
+			bottom: 0px;
+		}
+		#contents {
+			display: none;
+		}
+	</style>
 	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/paper-full.min.js"></script>
 	<script src="js/app.js"></script>
+	<script>
+	$(function() {
+		var height = $(window).height();
+		$('#paper-canvas').height(height);
+	});
+	</script>
+	<script type="text/paperscript" canvas="paper-canvas">
+		var numberOfStars = 400;
+		// var numberOfStars = 50;
+		var faraway = 1000;
+		var vector = new Point(0.02, -0.06);
+		var stars = [];
+		var lines = [];
+
+		var splitNumber = 15;
+		project.currentStyle = {
+			fillColor: '#ffffff'
+		};
+
+		$(init);
+
+		var scrollValue = 0;
+		var previousScrollOffset = $(window).scrollTop();
+		var scrolling = false;
+		$(window).on('scroll', function(event) {
+			scrolling = true;
+			var d = 200;
+			var scrollValue = (previousScrollOffset - $(window).scrollTop()) / d;
+
+			// vector *= 1 + scrollValue;
+			// if (vector.length > 100) {
+			// 	vector.length = 100;
+			// }
+
+		});
+
+		var px = 0;
+		var py = 0;
+		$(window).on('mousemove', function(event) {
+			if (px == 0) {
+				px = event.offsetX;
+				py = event.offsetY;
+				return;
+			}
+			var cx = event.offsetX;
+			var cy = event.offsetY;
+			var dx = px - cx;
+			var dy = py - cy;
+
+			// ワープ除外
+			if (dx > 300 || dy > 300) {
+				return;
+			}
+
+			if (dx > 0) {
+				vector.x += dx / 200;
+			} else {
+				vector.x += dx / 200;
+			}
+			if (dy > 0) {
+				vector.y += dy / 200;
+			} else {
+				vector.y += dy / 200;
+			}
+			if (vector.length > 100) {
+				vector.length = 100;
+			}
+
+			px = cx;
+			py = cy;
+		});
+
+		function init() {
+			for (var i = 0, l = numberOfStars; i < l; i++) {
+				var distance = Math.random() * (faraway) + (faraway / 10);
+				var radius = (1 * faraway / distance) / 5;
+				var star = new Path.Circle({
+					center: [
+						Math.random() * $(window).width(),
+						Math.random() * $(window).height(),
+					],
+					radius: radius
+				});
+				star.distanceFromViewpoint = distance;
+				star.defaultRadius = radius;
+				stars.push(star);
+			}
+		}
+
+		function onFrame(event) {
+			// if (scrolling) {
+			// 	scrolling = false;
+			// 	return;
+			// }
+			for (var i = 0, l = lines.length; i < l; i++) {
+				lines[i].remove();
+			}
+
+			var ww = $(window).width();
+			var wh = $(window).height();
+			for (var i = 0, l = numberOfStars; i < l; i++) {
+				var star = stars[i];
+
+				// 座標計算
+				var addVector = faraway / star.distanceFromViewpoint;
+				star.position.x += vector.x * addVector;
+				star.position.y += vector.y * addVector;
+
+				star.posX = parseInt(star.position.x / ww * splitNumber);
+				star.posY = parseInt(star.position.y / wh * splitNumber);
+
+				if (star.position.y < 0) {
+					star.position.y += wh;
+				} else if (star.position.y > wh) {
+					star.position.y -= wh;
+				}
+				if (star.position.x > ww) {
+					star.position.x -= ww;
+				} else if (star.position.x < 0) {
+					star.position.x += ww;
+				}
+
+				if (star.defaultRadius < 1) {
+					if (Math.random() < 0.1) {
+						star.fillColor = '#999';
+					} else {
+						star.fillColor = '#fff';
+					}
+				}
+				// star.position += new Point(
+				// 	Math.random() * 10 - 5,
+				// 	Math.random() * 10 - 5
+				// );
+
+				// for (var ii = 0, ll = numberOfStars; ii < ll; ii++) {
+				// 	if (star.position.getDistance(stars[ii].position) < 50) {
+				// 		// var line = new Path.Line(star.position, stars[ii].position);
+				// 		// line.strokeColor = 'white';
+				// 		// lines.push(line);
+				// 	}
+				// }
+
+			}
+
+			// for (var i = 0, l = numberOfStars; i < l; i++) {
+			// 	var star = stars[i];
+			// 	for (var j = 0, m = numberOfStars; j < m; j++) {
+			// 		var _star = stars[j];
+			// 		if (star === _star) {
+			// 			continue;
+			// 		}
+			// 		if (
+			// 			_star.posX - 1 <= star.posX && star.posX <= _star.posX + 1 &&
+			// 			_star.posY - 1 <= star.posY && star.posY <= _star.posY + 1 &&
+			// 			star.position.getDistance(_star.position) < 100
+			// 		) {
+			// 			var line = new Path.Line(star.position, stars[j].position);
+			// 			line.strokeColor = 'white';
+			// 			line.strokeWidth = 0.1;
+			// 			line.opacity = 0.3;
+			// 			lines.push(line);
+			// 		}
+			// 	}
+			// }
+
+			if (vector.length > 0.05) {
+				vector *= 0.95;
+			}
+			// console.log(vector);
+			// if (vector.length < 0.001) {
+			// 	vector.x = 0.02;
+			// 	vector.y = -0.06;
+				// vector = new Point(0.02, -0.06);
+			// }
+			// scrolling = false;
+		}
+
+	</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
