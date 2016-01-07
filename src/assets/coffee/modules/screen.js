@@ -8,8 +8,10 @@ export class Screen {
     })
 
     setTimeout(() => {
-      // $('body,html').animate({ scrollTop: '150px' }, 1200, 'easeInOutQuad')
-    }, 3000);
+      if ($(window).scrollTop() == 0) {
+        $('body,html').animate({ scrollTop: $(window).height() - 40 }, 1400, 'easeInOutQuart')
+      }
+    }, 3200);
   }
 
 }

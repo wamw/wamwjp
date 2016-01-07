@@ -11,7 +11,7 @@
 <body>
 	<div id="contents">
 		<section class="📂 ™">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502 100">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502 100" class="logo">
 				<defs>
 					<clipPath id="logo-clip">
 						<path d="
@@ -240,6 +240,8 @@
 			var cy = event.clientY;
 			var dx = px - cx;
 			var dy = py - cy;
+			px = cx;
+			py = cy;
 
 			if (dx > 300 || dy > 300) {
 				return;
@@ -251,9 +253,6 @@
 			if (vector.length > 100) {
 				vector.length = 100;
 			}
-
-			px = cx;
-			py = cy;
 		});
 
 		function init() {
