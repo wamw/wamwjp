@@ -3,10 +3,28 @@
 // x1="([^"]+)" y1="([^"]+)" x2="([^"]+)" y2="([^"]+)"
 // x1="$3" y1="$4" x2="$1" y2="$2"
 
+@keyframes show-stroke {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes show-fill-stroke {
+	to {
+		stroke-dashoffset: 0;
+		// stroke-width: 20px;
+		// opacity: 1;
+	}
+}
+@keyframes show-center-stroke {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
 @mixin stroke-letter($dashValue, $duration, $delay) {
 	stroke-dasharray: $dashValue;
 	stroke-dashoffset: $dashValue;
-	animation: show-stroke $duration $delay $easeInCubic;
+	animation: show-stroke ($duration / 1.2) $delay $easeInCubic;
 	animation-fill-mode: forwards;
 }
 
@@ -14,7 +32,8 @@
 	stroke-width: 20px;
 	stroke-dasharray: $dashValue;
 	stroke-dashoffset: $dashValue;
-	animation: show-fill-stroke ($duration / 2) 2.2s $easeInOutCubic;
+	// animation: show-fill-stroke ($duration / 2) 2.2s $easeInOutCubic;
+	animation: show-fill-stroke ($duration / 1.4) (($delay / 2) + 2s) $easeInCubic;
 	animation-fill-mode: forwards;
 }
 
@@ -22,7 +41,7 @@
 	stroke-width: 1px;
 	stroke-dasharray: $dashValue;
 	stroke-dashoffset: $dashValue;
-	animation: show-center-stroke $duration $delay $easeInCubic;
+	animation: show-center-stroke ($duration / 1.4) (($delay / 2) + 1.8s) $easeInCubic;
 	animation-fill-mode: forwards;
 }
 
@@ -117,23 +136,43 @@ html.anim {
 		// .fill-line16 { @include fill-letter(126.42978288362279, 0.2s, 2s); }
 		// .fill-line17 { @include fill-letter(68.50532825992443, 0.2s, 2s); }
 
+		// .fill-line0 { @include fill-letter(68.50532825992443, 0.45670218839949617s, 0.09196126991882922s); }
+		// .fill-line1 { @include fill-letter(126.52987789451154, 0.8435325192967437s, 0.13834507280960678s); }
+		// .fill-line2 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 0.3301679359190166s); }
+		// .fill-line3 { @include fill-letter(126.37982433917212, 0.8425321622611475s, 0.2043332978710532s); }
+		// .fill-line4 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 0.3107540430314839s); }
+		// .fill-line5 { @include fill-letter(126.37982433917212, 0.8425321622611475s, 0.3249387994408608s); }
+		// .fill-line6 { @include fill-letter(126.3798243391721, 0.8425321622611474s, 0.47196920692920685s); }
+		// .fill-line7 { @include fill-letter(69.34817950025798, 0.46232119666838656s, 0.3733252530358732s); }
+		// .fill-line8 { @include fill-letter(93.49807484649082, 0.6233204989766055s, 0.7240793641284109s); }
+		// .fill-line9 { @include fill-letter(93.49807484649082, 0.6233204989766055s, 0.8126413581706583s); }
+		// .fill-line10 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 0.9622112608514727s); }
+		// .fill-line11 { @include fill-letter(126.37982433917212, 0.8425321622611475s, 0.9532843220233918s); }
+		// .fill-line12 { @include fill-letter(126.37982433917212, 0.8425321622611475s, 0.8765664033964276s); }
+		// .fill-line13 { @include fill-letter(126.52987789451153, 0.8435325192967436s, 0.9810814543254673s); }
+		// .fill-line14 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 0.9642530680447818s); }
+		// .fill-line15 { @include fill-letter(126.37982433917209, 0.8425321622611472s, 1.2751164140179752s); }
+		// .fill-line16 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 1.433052106127143s); }
+		// .fill-line17 { @include fill-letter(68.50532825992443, 0.45670218839949617s, 1.5588817350007595s); }
+
+
 		.fill-line0 { @include fill-letter(68.50532825992443, 0.45670218839949617s, 0.09196126991882922s); }
-		.fill-line1 { @include fill-letter(126.52987789451154, 0.8435325192967437s, 0.13834507280960678s); }
-		.fill-line2 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 0.3301679359190166s); }
-		.fill-line3 { @include fill-letter(126.37982433917212, 0.8425321622611475s, 0.2043332978710532s); }
-		.fill-line4 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 0.3107540430314839s); }
-		.fill-line5 { @include fill-letter(126.37982433917212, 0.8425321622611475s, 0.3249387994408608s); }
-		.fill-line6 { @include fill-letter(126.3798243391721, 0.8425321622611474s, 0.47196920692920685s); }
-		.fill-line7 { @include fill-letter(69.34817950025798, 0.46232119666838656s, 0.3733252530358732s); }
-		.fill-line8 { @include fill-letter(93.49807484649082, 0.6233204989766055s, 0.7240793641284109s); }
-		.fill-line9 { @include fill-letter(93.49807484649082, 0.6233204989766055s, 0.8126413581706583s); }
-		.fill-line10 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 0.9622112608514727s); }
-		.fill-line11 { @include fill-letter(126.37982433917212, 0.8425321622611475s, 0.9532843220233918s); }
-		.fill-line12 { @include fill-letter(126.37982433917212, 0.8425321622611475s, 0.8765664033964276s); }
-		.fill-line13 { @include fill-letter(126.52987789451153, 0.8435325192967436s, 0.9810814543254673s); }
-		.fill-line14 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 0.9642530680447818s); }
-		.fill-line15 { @include fill-letter(126.37982433917209, 0.8425321622611472s, 1.2751164140179752s); }
-		.fill-line16 { @include fill-letter(126.42978288362279, 0.8428652192241519s, 1.433052106127143s); }
+		.fill-line1 { @include fill-letter(126.52987789451154, 0.7435325192967437s, 0.13834507280960678s); }
+		.fill-line2 { @include fill-letter(126.42978288362279, 0.5428652192241519s, 0.4301679359190166s); }
+		.fill-line3 { @include fill-letter(126.37982433917212, 0.5425321622611475s, 0.6043332978710532s); }
+		.fill-line4 { @include fill-letter(126.42978288362279, 0.3428652192241519s, 0.8707540430314839s); }
+		.fill-line5 { @include fill-letter(126.37982433917212, 0.3425321622611475s, 0.8249387994408608s); }
+		.fill-line6 { @include fill-letter(126.3798243391721, 0.4425321622611474s, 0.87196920692920685s); }
+		.fill-line7 { @include fill-letter(69.34817950025798, 0.36232119666838656s, 0.8733252530358732s); }
+		.fill-line8 { @include fill-letter(93.49807484649082, 0.5233204989766055s, 0.7733252530358732s); }
+		.fill-line9 { @include fill-letter(93.49807484649082, 0.6233204989766055s, 0.8240793641284109s); }
+		.fill-line10 { @include fill-letter(126.42978288362279, 0.5428652192241519s, 0.9126413581706583s); }
+		.fill-line11 { @include fill-letter(126.37982433917212, 0.6125321622611475s, 0.9332843220233918s); }
+		.fill-line12 { @include fill-letter(126.37982433917212, 0.4125321622611475s, 1.1632843220233918s); }
+		.fill-line13 { @include fill-letter(126.52987789451153, 0.7435325192967436s, 1.0810814543254673s); }
+		.fill-line14 { @include fill-letter(126.42978288362279, 0.6428652192241519s, 1.1342530680447818s); }
+		.fill-line15 { @include fill-letter(126.37982433917209, 0.5425321622611472s, 1.4751164140179752s); }
+		.fill-line16 { @include fill-letter(126.42978288362279, 0.4428652192241519s, 1.433052106127143s); }
 		.fill-line17 { @include fill-letter(68.50532825992443, 0.45670218839949617s, 1.5588817350007595s); }
 
 
@@ -226,21 +265,3 @@ html.show {
 
 
 
-
-@keyframes show-stroke {
-	to {
-		stroke-dashoffset: 0;
-	}
-}
-@keyframes show-fill-stroke {
-	to {
-		stroke-dashoffset: 0;
-		// stroke-width: 20px;
-		// opacity: 1;
-	}
-}
-@keyframes show-center-stroke {
-	to {
-		stroke-dashoffset: 0;
-	}
-}

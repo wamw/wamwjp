@@ -56,19 +56,6 @@ p:lang(ja) {
 	bottom: 0px;
 	z-index: -1;
 }
-section.wamw {
-	display: table-cell !important;
-	width: 800px;
-	vertical-align: middle;
-	text-align: center;
-	svg {
-		width: 361px;
-		height: 72px;
-	}
-}
-#contents {
-
-}
 
 section.📂 {
 	width: 900px;
@@ -104,6 +91,18 @@ section.📂 {
 		// border: 1px solid rgba(255, 255, 255, 0.1);
 		// padding: 40px;
 		// background: rgba(0, 0, 0, 0.4);
+	}
+}
+
+section.📂.™ {
+	display: table-cell !important;
+	vertical-align: middle;
+	text-align: center;
+	svg {
+		// width: 361px;
+		// height: 72px;
+		width: 220px;
+		height: 160px;
 	}
 }
 
