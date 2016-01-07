@@ -152,27 +152,87 @@
 			</div>
 		</section>
 		-->
-		<section class="company default">
-			<h1>company</h1>
-			<div class="contents">
-				<h2>WAMW Inc.</h2>
-				<h2 lang="ja">株式会社ワムウ</h2>
-
-				<p class="address">#505 Sky building No.5, 3-3-8 Sendagaya, Shibuya-ku. Tokyo</p>
-				<p class="address" lang="ja">
-					151-0051<br>東京都渋谷区千駄ヶ谷3-3-8 第五スカイビル505
+		<section class="📂 💮">
+			<h1>mission</h1>
+			<div class="📄">
+				<h2><span lang="en">Web</span>を便利にする</h2>
+				<p lang="en">
+					The introduction of the Internet brought on big changes to our society.<br>
+					Today, the speed of communication continues to pick up speed – information is exchanged in a matter of seconds.<br>
+					No one doubts the usefulness of the Internet, but there are questions about how it is being used. Non-user-friendly applications on an otherwise useful website, unnecessary exchange of information not utilizing on the full potential of a website, all cause unnecessary stress.<br>
+					Our mission is to discover such useless and non-use-friendly oddities, to find and create solutions to resolve the situation to make useful websites even more user-friendly.
 				</p>
+				<p lang="en">
+					We want to alleviate stress from users, creating for a better future.
+				</p>
+				<p lang="ja">
+					私達のミッションはWeb上の無駄で不便な物を発見し、問題解決を行うことで、便利なWebを更に便利にする。そしてそれを使う人々をストレスから開放し、より良い未来を構築することです。
+				</p>
+			</div>
+		</section>
+		<section class="📂 💪">
+			<h1>works</h1>
+			<div class="📄">
+				<section>
+					<h2>prvvv</h2>
+					<p lang="en">
+						Support tool for coding, verification, messaging and fixing during web development.
+					</p>
+					<p lang="ja">
+						Web制作におけるコーディング・確認・連絡・修正の業務フローを改善するための制作サポートツールです。
+					</p>
+				</section>
+				<section>
+					<h2>log visualize</h2>
+					<p lang="en">
+						Log analysis and visualization of customers’ existing systems, EC sites and other web systems.
+					</p>
+					<p lang="ja">
+						ご使用の業務システム・ECサイト・その他Webシステムのログを解析し可視化を行います。
+					</p>
+				</section>
+				<section>
+					<h2>web business consulting</h2>
+					<p lang="en">
+						Development and proposal for web tools to improve the customers’ businesses by researching individual business models.
+					</p>
+					<p lang="ja">
+						お客様のビジネスモデルを研究し、ビジネスの発展のためのWebツールを提案・開発致します。
+					</p>
+				</section>
+				<section>
+					<h2>web system development</h2>
+					<p lang="en">
+						Create a stable, easy to maintain system by listing prerequisites based on customer needs.
+					</p>
+					<p lang="ja">
+						ご要望をお伺いし、要件の洗い出しを行ったうえで、安定性・メンテナンス性の高いシステムの構築を行います。
+					</p>
+				</section>
+			</div>
+		</section>
+		<section class="📂 🏢">
+			<h1>company</h1>
+			<div class="📄">
+				<h2 lang="en">WAMW Inc.</h2>
+				<p lang="en">#505 Sky building No.5, 3-3-8 Sendagaya, Shibuya-ku. Tokyo</p>
+				<h2 lang="ja">株式会社ワムウ</h2>
+				<p lang="ja">〒151-0051 東京都渋谷区千駄ヶ谷3-3-8 第五スカイビル505</p>
 				<div id="map"></div>
 			</div>
 		</section>
-		<!--
-		<section class="contact default">
+		<section class="📂 📨">
 			<h1>contact</h1>
-			<div class="contents">
+			<div class="📄">
 				<h2><a href="mailto:wamw@wamw.jp">wamw@wamw.jp</a></h2>
 			</div>
 		</section>
-		-->
+		<section class="📂 ©">
+			<h1>copyright</h1>
+			<div class="📄">
+				<p><span class="©">&copy;</span> 2015 wamw inc. made with <span class="♥">&hearts;</span></p>
+			</div>
+		</section>
 	</div>
 	<canvas id="paper-canvas" resize></canvas>
 	<script src="js/jquery-2.1.4.min.js"></script>
@@ -194,7 +254,8 @@
 
 		var splitNumber = 15;
 		project.currentStyle = {
-			fillColor: '#f0f0f0'
+			// fillColor: '#f0f0f0'
+			fillColor: '#080808'
 		};
 
 		$(init);
@@ -203,7 +264,7 @@
 		var previousScrollOffset = $(window).scrollTop();
 		$(window).on('scroll', function(event) {
 			var scrollValue = (previousScrollOffset - $(window).scrollTop());
-			scrollValue /= 500;
+			scrollValue /= 100;
 			previousScrollOffset = $(window).scrollTop();
 
 			if (scrollValue > 0) {
@@ -346,13 +407,13 @@
 
 	</script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-69244501-1', 'auto');
-  ga('send', 'pageview');
+  // ga('create', 'UA-69244501-1', 'auto');
+  // ga('send', 'pageview');
 </script>
 </body>
 </html>
